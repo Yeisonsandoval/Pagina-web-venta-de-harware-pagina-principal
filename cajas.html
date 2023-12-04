@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Tienda en Línea</title>
+    <link rel="stylesheet" type="text/css" href="estilos.css"> 
+</head>
+<body>
+    <section id="Menu principal">
+    <header>
+        <h1>TecnoInnovatecPC</h1>
+        <section id="logocasa">
+            <a href="pagina_principal.html">
+               
+                <img src="img/casa.png" alt="Casa" width="30" height="30">
+            </a>
+        </section>
+        <nav>
+            <ul>
+                <li class="categoria">
+                    <a href="#Categoria">Categoria</a>
+                    <ul class="lista-desplegable">
+                        <li><a href="Cajas.html">Cajas</a></li>                        
+                        <li><a href="Diadema.html">Diadema</a></li>
+                        <li><a href="#">Fuente</a></li>
+                        <li><a href="#">Memoria RAM</a></li>
+                        <li><a href="#">Monitores</a></li>
+                        <li><a href="#">Portátiles Gamer</a></li>
+                        <li><a href="#">Routers</a></li>
+                        <li><a href="#">Refrigeraciones</a></li>
+                        <li><a href="#">Reguladores y UPS</a></li>
+                        <li><a href="#">Silla</a></li>
+                        <li><a href="#">Streming</a></li>
+                        <li><a href="#">Tarjeta Gráfica</a></li>
+                        <li><a href="#">Teclados</a></li>
+                        <li><a href="#">Unidades Disco Mecánico</a></li>
+                        <li><a href="#">Unidades SSD</a></li>
+                    </ul>
+                </li>
+
+                <li class="Oferta">
+                    <a href="Ofertas.html">Oferta</a> 
+                </li>
+
+                <li class="Tienda">
+                    <a href="#seccion3">Tienda</a>
+                    <ul class="lista-desplegable">
+                        <li><a href="#">Elemento 1</a></li>
+                        <li><a href="#">Elemento 2</a></li>
+                        <li><a href="#">Elemento 3</a></li>
+                    </ul>
+                </li>
+                <li class="Marca">
+                    <a href="#seccion4">Marca</a>
+                    <ul class="lista-desplegable">
+                        <li><a href="#">Asus</a></li>
+                        <li><a href="#">Corsair</a></li>
+                        <li><a href="#">Cougar</a></li>
+                        <li><a href="#">El gato</a></li>
+                        <li><a href="#">Gigabyte</a></li>
+                        <li><a href="#">Hyperx</a></li>
+                        <li><a href="#">kingston</a></li>
+                        <li><a href="#">Logitech</a></li>
+                        <li><a href="#">Msi</a></li>
+                        <li><a href="#">NVIDIA Geforce</a></li>
+                        <li><a href="#">Razer</a></li>
+                        <li><a href="#">Samsung</a></li>
+                        <li><a href="#">Thermaltake</a></li>                      
+                    </ul>
+                </li>
+                <li class="Contactenos">
+                    <a href="#seccion5">Contactenos</a>
+                    <ul class="lista-desplegable">
+                        <li><a href="#">Elemento 1</a></li>
+                        <li><a href="#">Elemento 2</a></li>
+                        <li><a href="#">Elemento 3</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+</section>
+
+
+</head>
+<body>
+    <section id="menu-container">
+        <h1>Menú de Productos</h1>
+
+        <!-- Filtros -->
+        <section id="filters">
+            <h2>Filtros:</h2>
+            <label for="category">Categoría:</label>
+            <select id="category">
+                <option value="todos">Todos</option>
+                <option value="ropa">Ropa</option>
+                <option value="electronicos">Electrónicos</option>
+                <option value="hogar">Hogar</option>
+            </select>
+
+            <label for="price">Precio Máximo:</label>
+            <input type="number" id="price" min="0" step="10">
+
+            <button type="button" onclick="filterProducts()">Filtrar</button>
+        </section>
+    </section>
+
+    <!-- Lista de Productos -->
+    <ul id="Menu">
+        <li data-category="" data-price="30"></li>
+        <li data-category="" data-price="150"></li>
+        <li data-category="" data-price="40"></li>
+        <!-- Agrega más elementos aquí -->
+    </ul>
+
+    <script>
+        function filterProducts() {
+            const categoryFilter = document.getElementById("category");
+            const priceFilter = document.getElementById("price");
+            const productos = document.querySelectorAll("#menu li");
+
+            const selectedCategory = categoryFilter.value;
+            const maxPrice = parseFloat(priceFilter.value);
+
+            productos.forEach(producto => {
+                const category = producto.getAttribute("data-category");
+                const price = parseFloat(producto.getAttribute("data-price"));
+
+                if ((selectedCategory === "todos" || selectedCategory === category) && price <= maxPrice) {
+                    producto.style.display = "block";
+                } else {
+                    producto.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>

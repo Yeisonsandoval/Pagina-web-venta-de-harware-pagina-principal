@@ -1,0 +1,339 @@
+/* Estilos globales */
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos del encabezado */
+header {
+    background-color: #333;
+    color: rgb(217, 255, 0);
+    padding: 20px;
+    text-align: center;
+    max-width: 100%;
+}
+
+/* Estilos para el título h1 */
+h1 {
+    margin: 2;
+}
+
+/* Estilos de la barra de navegación */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 80px;
+}
+
+/* Estilos de los enlaces en la barra de navegación */
+li {
+    margin: 0.75rem;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* Estilos del contenido principal */
+main {
+    text-align: left;
+    padding: 40px;
+}
+
+/* Estilos de las categorías y sus listas desplegables */
+.categoria {
+    position: relative;
+    display: inline-block;
+}
+
+.lista-desplegable {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    background-color: #ff7b00f3;
+    border: 0.5px solid #000000;
+    padding: 4px;
+    z-index: 1;
+    column-count: 2;
+    column-gap: 15px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.lista-desplegable li {
+    margin-bottom: 20px;
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+/* Mostrar la lista desplegable al pasar el mouse sobre la categoría */
+.categoria:hover .lista-desplegable {
+    display: block;
+}
+
+/* Estilos de los botones */
+button {
+    background-color: #007BFF;
+    color: rgb(255, 0, 0);
+    padding: 20px 20px;
+    border: none;
+    cursor: pointer;
+}
+/* Estilos para el botón "Ver Más" */
+.ver-mas {
+    background-color: #f2f2f2; /* Color gris claro */
+    color: #333; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    border: 2px solid #ccc; /* Borde gris claro */
+    border-radius: 10px; /* Bordes redondeados */
+    cursor: pointer;
+}
+
+/* Estilos para cambiar el color cuando el mouse pasa sobre el botón */
+.ver-mas:hover {
+    background-color: #ddd; /* Cambia a un tono más oscuro de gris cuando se pasa el mouse */
+}
+
+/* Estilos para la sección de noticias */
+/* Estilos de las imágenes dentro de la sección de noticias */
+#Noticias img {
+    max-width: 85%;
+    height: auto;
+    border: 2px solid #333;
+    box-shadow: 3px 3px 5px #888888;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    padding: 15px; /* Asegúrate de especificar la unidad de medida, como "px" */
+}
+
+/* Estilos del banner dentro de la sección de noticias */
+#Noticias .banner {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Estilos de las imágenes del banner dentro de la sección de noticias */
+#Noticias .banner img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    opacity: 0;
+    animation: slide 20s linear infinite;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+/* Configuración de animación del banner dentro de la sección de noticias */
+#Noticias .banner img:nth-child(1) {
+    animation-delay: 0s;
+}
+
+#Noticias .banner img:nth-child(2) {
+    animation-delay: 5s;
+}
+
+#Noticias .banner img:nth-child(3) {
+    animation-delay: 10s;
+}
+
+/* Definición de la animación "slide" */
+@keyframes slide {
+    0%, 100% {
+        opacity: 0;
+    }
+    10%, 90% {
+        opacity: 1;
+    }
+    95% {
+        opacity: 0;
+    }
+}
+#logocasa {
+    float: left;
+    margin-top: 10px;
+    margin-right: 65px; /* Opcional: Agrega un margen a la derecha de la imagen para separarla del contenido circundante */
+}
+
+
+/* Estilos para la sección de Contacto */
+#Contacto {
+    background-color: #333;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 10px;
+    max-width: 100%;
+}
+
+/* Estilos para el pie de página dentro de la sección de Contacto */
+#Contacto footer {
+    background-color: #333;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px;
+    max-width: 100%;
+}
+
+/* Estilos para el menú principal */
+#menu-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #f2f2f2;
+}
+
+#filters {
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 20px; /* Agrega margen para separar los filtros del menú principal */
+}
+
+#menu {
+    list-style-type: none;
+    padding: 0;
+    flex: 1; /* Rellena el espacio vertical disponible */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Reglas de Media Query */
+@media only screen and (max-width: 480px) {
+    /* Ajustes para dispositivos con ancho de pantalla de hasta 480px */
+    body {
+        margin: 10px;
+    }
+    #Video iframe {
+        width: 100%;
+        height: 200px; 
+    }
+
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    /* Ajustes para dispositivos con ancho de pantalla entre 481px y 768px */
+    nav ul {
+        text-align: center;
+    }
+
+    nav ul li {
+        display: inline;
+        margin: 0 10px;
+    }
+    #Video iframe {
+        width: 100%;
+        height: 300px; 
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Ajustes para dispositivos con ancho de pantalla entre 769px y 1024px */
+    #Noticias .banner {
+        height: auto;
+    }
+
+    #Noticias .banner img {
+        height: auto;
+        position: static;
+        opacity: 1;
+        animation: none;
+    }
+
+    #Contacto footer {
+        padding: 20px;
+    }
+    #Video iframe {
+        width: 100%;
+        height: 400px; 
+    }
+    
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+#Contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centra verticalmente los elementos en el contenedor */
+    min-height: 50vh; /* Asegura que el contenedor ocupe al menos el 100% del alto de la pantalla */
+}
+
+form {
+    text-align: left; /* Alinea el texto del formulario a la izquierda */
+    width: 100%; /* O ajusta el ancho según tus necesidades */
+    max-width: 400px; /* Establece un ancho máximo para el formulario */
+    margin: 0 auto; /* Centra el formulario horizontalmente en el contenedor */
+}
+
+form h1 {
+    margin-bottom: 20px;
+    
+}
+
+form label,
+form input,
+form input[type="submit"] {
+    display: block;
+    margin-bottom: 10px;
+    
+}
+
+.footer-content {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end; /* Alinea los elementos en la parte inferior */
+    flex-wrap: wrap;
+    margin-top: 20px; /* Agrega margen superior para separar del formulario */
+}
+
+.footer-content p {
+    flex: 1;
+    margin: 0;
+}
+
+.footer-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.footer-content li {
+    margin: 5px;
+}
+
+.footer-content a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+}
